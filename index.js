@@ -1,21 +1,15 @@
 let books = [];
+
 let button = document.getElementById('submit');
-button.addEventListener('click', savebook);
+button.addEventListener('click', saveBook);
 
-// function setBook(input) {
-//     let input = document.getElementById("1");
+let book = document.getElementById('input');
 
-// }
-
-// books.push(book);
-let input = document.getElementById('1');
-
-function savebook() {
-  books.push(input.value);
-  console.log(books);
-  localStorage.setItem('books', JSON.stringify(books));
-  document.getElementById('title').innerHTML = input.value;
-  input.value = '';
-  let parser = JSON.parse(localStorage.getItem('books'));
+function saveBook() {
+  books.push(book.value);
+  localStorage.setItem('book', JSON.stringify(books));
+  document.getElementById('title').innerHTML = book.value;
+  book.value = '';
+  let parser = JSON.parse(localStorage.getItem('book'));
   console.log(parser);
 }
